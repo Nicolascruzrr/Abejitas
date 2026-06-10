@@ -1333,9 +1333,9 @@ ul { list-style: none; }
 }
 
 .reach-out__card-title {
-  font-family: 'DM Serif Display', Georgia, serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 1.65rem;
-  font-weight: 400;
+  font-weight: 800;
   color: var(--reach-brown);
   margin-bottom: 10px;
 }
@@ -2092,6 +2092,14 @@ ul { list-style: none; }
   .site-bar__copy {
     justify-self: center;
     text-align: center;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .hero {
+    background-image: url("img/hero background ipad.png");
+    background-position: center;
+    background-size: cover;
   }
 }
 
