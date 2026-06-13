@@ -27,10 +27,17 @@
           <li><a href="#guia" class="nav__link">Guía</a></li>
           <li><a href="#contacto" class="nav__link">Contacto</a></li>
         </ul>
+        <a href="#contacto" class="btn btn--yellow nav__cta">
+          <svg class="nav__cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Reservar Cita
+        </a>
       </nav>
 
       <div class="header__actions">
-        <a href="#contacto" class="btn btn--yellow">Reservar Cita</a>
+        <a href="#contacto" class="btn btn--yellow header__cta">
+          <svg class="header__cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Reservar Cita
+        </a>
         <button class="hamburger" id="hamburger" aria-label="Abrir menú">
           <span></span><span></span><span></span>
         </button>
@@ -53,49 +60,11 @@
           </span>
         </h1>
 
-        <div class="hero__intro hero--cel-only">
-          <span class="hero__intro-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.35-7-11a4.5 4.5 0 0 1 8-2.2A4.5 4.5 0 0 1 19 10c0 6.65-7 11-7 11z"/></svg>
-          </span>
-          <p class="hero__text hero__text--cel">
-            <strong>Cuidado veterinario profesional,</strong><br>
-            trato amable y mucho amor<br>
-            para que viva feliz<br>
-            y saludable.
-          </p>
-        </div>
-
-        <p class="hero__text hero--desktop-only">
-          <span class="hero__text-line">Cuidado veterinario profesional,</span>
-          <span class="hero__text-line">trato amable y mucho amor</span>
-          <span class="hero__text-line">para que viva feliz y saludable.</span>
+        <p class="hero__text">
+          En Abejitas Veterinaria cuidamos a cada paciente como parte de nuestra familia, brindando atención médica profesional, prevención y acompañamiento en cada etapa de su vida.
         </p>
 
-        <ul class="hero__perks hero--cel-only">
-          <li class="hero__perk">
-            <span class="hero__perk-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-            </span>
-            <span><strong>Atención</strong><br>con amor</span>
-          </li>
-          <li class="hero__perk">
-            <span class="hero__perk-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="17" rx="5" ry="4"/><circle cx="7" cy="10" r="2.5"/><circle cx="12" cy="7" r="2.5"/><circle cx="17" cy="10" r="2.5"/></svg>
-            </span>
-            <span><strong>Servicios</strong><br>completos</span>
-          </li>
-          <li class="hero__perk">
-            <span class="hero__perk-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4.8 10.2a6 6 0 0 1 10.6-3.2l.6.6"/><path d="M19.2 13.8a6 6 0 0 1-10.6 3.2l-.6-.6"/><path d="M9 12h6"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg>
-            </span>
-            <span><strong>Bienestar</strong><br>para toda la vida</span>
-          </li>
-        </ul>
-
-        <a href="#contacto" class="btn btn--yellow hero__btn hero--cel-only">
-          <svg class="hero__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-          Reservar Cita
-        </a>
+        <a href="#guia" class="btn btn--yellow hero__btn hero--cel-only">Comprar Guía</a>
 
         <a href="#guia" class="btn btn--yellow hero--desktop-only">Comprar Guía</a>
       </div>
@@ -114,9 +83,13 @@
     </svg>
     <div class="container about__inner">
       <div class="about__content">
-        <span class="about__label">Nosotros</span>
-        <h2 class="about__title">Una familia que ama a los animales.</h2>
-        <p class="about__text">En Abejitas Veterinaria llevamos más de una década dedicados al bienestar de tus compañeros peludos. Combinamos medicina moderna con un trato cercano para que cada visita sea una experiencia tranquila y cariñosa.</p>
+        <span class="about__label">Quiénes somos</span>
+        <h2 class="about__title">Más que una veterinaria, una familia.</h2>
+        <div class="about__body">
+          <p class="about__text">En Abejitas Veterinaria creemos que cada mascota merece recibir atención médica de calidad, respeto y mucho amor.</p>
+          <p class="about__text">Desde hace más de una década acompañamos a familias dominicanas en el cuidado de sus perros y gatos, promoviendo la medicina preventiva, el bienestar animal y la educación responsable de los propietarios.</p>
+          <p class="about__text">Nuestro compromiso es ofrecer un servicio cercano, humano y profesional, porque entendemos que detrás de cada paciente existe una familia que confía en nosotros.</p>
+        </div>
         <div class="about__actions">
           <a href="#servicios" class="about__btn about__btn--primary">Nuestros servicios</a>
           <a href="#nosotros" class="about__btn about__btn--outline">Conócenos</a>
@@ -144,61 +117,89 @@
   </section>
 
   <!-- Por Qué Elegirnos -->
-  <section class="services why-choose" id="por-que-elegirnos">
+  <section class="why-choose section" id="por-que-elegirnos">
     <div class="wave-divider wave-divider--top">
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C360,0 720,80 1080,40 C1260,20 1380,30 1440,40 L1440,0 L0,0 Z" fill="#FFFDF5"/></svg>
     </div>
 
+    <div class="why-choose__glow why-choose__glow--1" aria-hidden="true"></div>
+    <div class="why-choose__glow why-choose__glow--2" aria-hidden="true"></div>
+
     <div class="services__deco" aria-hidden="true">
       <svg class="services__deco-leaf" viewBox="0 0 80 80"><path d="M40 8 C20 30 12 55 40 72 C68 55 60 30 40 8Z" fill="none" stroke="#A8C686" stroke-width="2"/></svg>
+      <svg class="services__deco-leaf services__deco-leaf--2" viewBox="0 0 80 80"><path d="M40 8 C20 30 12 55 40 72 C68 55 60 30 40 8Z" fill="none" stroke="#A8C686" stroke-width="2"/></svg>
       <svg class="services__deco-heart services__deco-heart--1" viewBox="0 0 24 24"><path d="M12 21s-8-4.5-8-11a5 5 0 0 1 9-2.5A5 5 0 0 1 20 10c0 6.5-8 11-8 11z" fill="none" stroke="#F4C542" stroke-width="1.5"/></svg>
-      <svg class="services__deco-paw" viewBox="0 0 60 60"><g fill="#A8C686"><ellipse cx="30" cy="38" rx="10" ry="8"/><circle cx="18" cy="22" r="6"/><circle cx="30" cy="14" r="6"/><circle cx="42" cy="22" r="6"/></g></svg>
       <svg class="services__deco-heart services__deco-heart--2" viewBox="0 0 24 24"><path d="M12 21s-8-4.5-8-11a5 5 0 0 1 9-2.5A5 5 0 0 1 20 10c0 6.5-8 11-8 11z" fill="none" stroke="#F4C542" stroke-width="1.5"/></svg>
+      <svg class="services__deco-heart services__deco-heart--3" viewBox="0 0 24 24"><path d="M12 21s-8-4.5-8-11a5 5 0 0 1 9-2.5A5 5 0 0 1 20 10c0 6.5-8 11-8 11z" fill="none" stroke="#F4C542" stroke-width="1.5"/></svg>
+      <svg class="services__deco-paw" viewBox="0 0 60 60"><g fill="#A8C686"><ellipse cx="30" cy="38" rx="10" ry="8"/><circle cx="18" cy="22" r="6"/><circle cx="30" cy="14" r="6"/><circle cx="42" cy="22" r="6"/></g></svg>
+      <svg class="services__deco-paw services__deco-paw--2" viewBox="0 0 60 60"><g fill="#A8C686"><ellipse cx="30" cy="38" rx="10" ry="8"/><circle cx="18" cy="22" r="6"/><circle cx="30" cy="14" r="6"/><circle cx="42" cy="22" r="6"/></g></svg>
+      <svg class="services__deco-paw services__deco-paw--3" viewBox="0 0 60 60"><g fill="#A8C686"><ellipse cx="30" cy="38" rx="10" ry="8"/><circle cx="18" cy="22" r="6"/><circle cx="30" cy="14" r="6"/><circle cx="42" cy="22" r="6"/></g></svg>
     </div>
 
-    <div class="container services__container">
-      <header class="services__header">
-        <p class="services__eyebrow">Por Qué Elegirnos</p>
-        <h2 class="services__title">Lo que nos hace diferentes</h2>
+    <div class="container why-choose__inner">
+      <header class="why-choose__header">
+        <p class="why-choose__eyebrow">Por qué elegirnos</p>
+        <h2 class="why-choose__title">Porque su bienestar es nuestra prioridad.</h2>
       </header>
 
-      <div class="services__grid why-choose__grid">
-        <article class="service-card why-card why-card--productos">
-          <div class="service-card__photo">
-            <img src="img/consulta.JPG" alt="Productos de calidad para mascotas">
+      <div class="why-choose__grid">
+        <article class="why-choose__card why-choose__card--yellow">
+          <div class="why-choose__card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           </div>
-          <div class="service-card__icon-wrap service-card__icon-wrap--yellow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 14h16"/><path d="M6 14v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3"/><path d="M7 10c0-2 2-4 5-4s5 2 5 4"/></svg>
-          </div>
-          <div class="service-card__body">
-            <h3>Productos de Calidad</h3>
-            <p>Recomendamos alimentos y suplementos confiables para el bienestar de tu mascota.</p>
+          <div class="why-choose__card-body">
+            <p class="why-choose__card-text">Atención personalizada</p>
+            <p class="why-choose__card-desc">Escuchamos las necesidades de tu mascota y las tuyas.</p>
           </div>
         </article>
 
-        <article class="service-card why-card why-card--horario">
-          <div class="service-card__photo">
-            <img src="img/ducha.JPG" alt="Horario flexible de atención">
-          </div>
-          <div class="service-card__icon-wrap service-card__icon-wrap--brown">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          </div>
-          <div class="service-card__body">
-            <h3>Horario Flexible</h3>
-            <p>Atención de lunes a sábado con horarios pensados para tu comodidad.</p>
-          </div>
-        </article>
-
-        <article class="service-card why-card why-card--equipo">
-          <div class="service-card__photo">
-            <img src="img/cirugia.JPG" alt="Equipo veterinario capacitado">
-          </div>
-          <div class="service-card__icon-wrap service-card__icon-wrap--peach">
+        <article class="why-choose__card why-choose__card--sage">
+          <div class="why-choose__card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <div class="service-card__body">
-            <h3>Equipo Capacitado</h3>
-            <p>Veterinarios certificados con formación continua y estándares internacionales.</p>
+          <div class="why-choose__card-body">
+            <p class="why-choose__card-text">Equipo comprometido y capacitado</p>
+            <p class="why-choose__card-desc">Profesionales apasionados por el bienestar animal.</p>
+          </div>
+        </article>
+
+        <article class="why-choose__card why-choose__card--peach">
+          <div class="why-choose__card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6-8 10-8 10z"/></svg>
+          </div>
+          <div class="why-choose__card-body">
+            <p class="why-choose__card-text">Medicina preventiva</p>
+            <p class="why-choose__card-desc">Prevenimos enfermedades antes de que aparezcan.</p>
+          </div>
+        </article>
+
+        <article class="why-choose__card why-choose__card--brown">
+          <div class="why-choose__card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div class="why-choose__card-body">
+            <p class="why-choose__card-text">Diagnósticos oportunos</p>
+            <p class="why-choose__card-desc">Detectamos a tiempo para actuar con rapidez.</p>
+          </div>
+        </article>
+
+        <article class="why-choose__card why-choose__card--yellow">
+          <div class="why-choose__card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div class="why-choose__card-body">
+            <p class="why-choose__card-text">Trato cálido y respetuoso</p>
+            <p class="why-choose__card-desc">Cada visita es tranquila, cariñosa y respetuosa.</p>
+          </div>
+        </article>
+
+        <article class="why-choose__card why-choose__card--sage">
+          <div class="why-choose__card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="why-choose__card-body">
+            <p class="why-choose__card-text">Acompañamiento durante toda su vida</p>
+            <p class="why-choose__card-desc">Contigo desde cachorro hasta su edad dorada.</p>
           </div>
         </article>
       </div>
@@ -213,128 +214,125 @@
   <section class="services-highlight services-highlight--catalog section" id="servicios">
     <div class="container">
       <header class="services-highlight__header">
-        <p class="script-title script-title--green text-center">Servicios</p>
-        <h2 class="section-title text-center">¿Qué servicio desea?</h2>
-        <p class="services-highlight__intro text-center">Ofrecemos una amplia gama de servicios para el cuidado integral de tu mascota.</p>
+        <p class="script-title script-title--green text-center">Nuestros servicios</p>
+        <p class="services-highlight__intro services-highlight__intro--mini text-center">Atención profesional y cercana en cada etapa de su vida.</p>
       </header>
 
-      <div class="services-highlight__grid">
-        <div class="services-highlight__col services-highlight__col--left">
-          <article class="service-highlight-item">
-            <div class="service-highlight-item__icon service-highlight-item__icon--sage">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4.5 12.5c0-1.5 1.5-3.5 3.5-3.5s3.5 2 3.5 3.5"/><path d="M8 12.5h8"/><path d="M12 12.5v5"/><path d="M9 17.5h6"/><circle cx="12" cy="8" r="5.5"/></svg>
-            </div>
-            <div class="service-highlight-item__text">
-              <h3>Consulta</h3>
-              <p>Evaluación veterinaria general para cuidar la salud de tu mascota.</p>
-            </div>
-          </article>
-          <article class="service-highlight-item">
-            <div class="service-highlight-item__icon service-highlight-item__icon--yellow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-            </div>
-            <div class="service-highlight-item__text">
-              <h3>Vacunación</h3>
-              <p>Esquema de vacunas actualizado según su edad y estilo de vida.</p>
-            </div>
-          </article>
-          <article class="service-highlight-item">
-            <div class="service-highlight-item__icon service-highlight-item__icon--peach">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-            </div>
-            <div class="service-highlight-item__text">
-              <h3>Desparasitación</h3>
-              <p>Tratamiento interno y externo para proteger su salud.</p>
-            </div>
-          </article>
-          <article class="service-highlight-item">
-            <div class="service-highlight-item__icon service-highlight-item__icon--brown">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s-8-4.5-8-11a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 6.5-8 11-8 11z"/></svg>
-            </div>
-            <div class="service-highlight-item__text">
-              <h3>Antipulgas</h3>
-              <p>Productos y aplicaciones para prevenir pulgas y garrapatas.</p>
-            </div>
-          </article>
-          <article class="service-highlight-item">
-            <div class="service-highlight-item__icon service-highlight-item__icon--sage">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-            </div>
-            <div class="service-highlight-item__text">
-              <h3>Profilaxis</h3>
-              <p>Limpieza dental para prevenir enfermedades bucales.</p>
-            </div>
-          </article>
-          <article class="service-highlight-item">
-            <div class="service-highlight-item__icon service-highlight-item__icon--yellow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 14h16"/><path d="M6 14v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3"/><path d="M7 10c0-2 2-4 5-4s5 2 5 4"/></svg>
-            </div>
-            <div class="service-highlight-item__text">
-              <h3>Baño</h3>
-              <p>Baño higiénico con productos suaves para su piel y pelaje.</p>
-            </div>
-          </article>
-        </div>
-
+      <div class="services-highlight__layout">
         <div class="services-highlight__center">
           <img src="img/perros.png" alt="Mascotas felices en Abejitas Veterinaria">
         </div>
 
-        <div class="services-highlight__col services-highlight__col--right">
-          <article class="service-highlight-item">
-            <div class="service-highlight-item__icon service-highlight-item__icon--peach">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3v18M18 3v18M6 8h12M6 16h12"/></svg>
-            </div>
-            <div class="service-highlight-item__text">
-              <h3>Peluquería</h3>
-              <p>Corte, peinado y arreglo para que luzca y se sienta bien.</p>
-            </div>
-          </article>
-          <article class="service-highlight-item">
-            <div class="service-highlight-item__icon service-highlight-item__icon--brown">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div class="service-highlight-item__text">
-              <h3>Asesoría de Viaje</h3>
-              <p>Orientación y documentación para viajar con tu mascota.</p>
-            </div>
-          </article>
-          <article class="service-highlight-item">
-            <div class="service-highlight-item__icon service-highlight-item__icon--sage">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <div class="service-highlight-item__text">
-              <h3>Comprar cachorro</h3>
-              <p>Te ayudamos a encontrar el compañero ideal para tu familia.</p>
-            </div>
-          </article>
-          <article class="service-highlight-item">
-            <div class="service-highlight-item__icon service-highlight-item__icon--yellow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            </div>
-            <div class="service-highlight-item__text">
-              <h3>Adoptar</h3>
-              <p>Conectamos mascotas rescatadas con familias amorosas.</p>
-            </div>
-          </article>
-          <article class="service-highlight-item">
-            <div class="service-highlight-item__icon service-highlight-item__icon--peach">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
-            </div>
-            <div class="service-highlight-item__text">
-              <h3>Hotel</h3>
-              <p>Hospedaje seguro y cómodo mientras no puedes estar con él.</p>
-            </div>
-          </article>
-          <article class="service-highlight-item">
-            <div class="service-highlight-item__icon service-highlight-item__icon--brown">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            </div>
-            <div class="service-highlight-item__text">
-              <h3>Internamiento</h3>
-              <p>Cuidado y monitoreo veterinario durante su recuperación.</p>
-            </div>
-          </article>
+        <div class="services-highlight__rows">
+          <div class="services-highlight__row">
+            <article class="service-highlight-item service-highlight-item--left">
+              <div class="service-highlight-item__text">
+                <h3>Consulta Veterinaria</h3>
+                <p>Evaluaciones completas para detectar a tiempo cualquier alteración en la salud de tu mascota y diseñar el mejor plan de cuidado.</p>
+              </div>
+              <div class="service-highlight-item__icon service-highlight-item__icon--sage">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4.5 12.5c0-1.5 1.5-3.5 3.5-3.5s3.5 2 3.5 3.5"/><path d="M8 12.5h8"/><path d="M12 12.5v5"/><path d="M9 17.5h6"/><circle cx="12" cy="8" r="5.5"/></svg>
+              </div>
+            </article>
+            <div class="services-highlight__row-spacer" aria-hidden="true"></div>
+            <article class="service-highlight-item service-highlight-item--right">
+              <div class="service-highlight-item__icon service-highlight-item__icon--yellow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s-8-4.5-8-11a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 6.5-8 11-8 11z"/></svg>
+              </div>
+              <div class="service-highlight-item__text">
+                <h3>Prevención y Desparasitación</h3>
+                <p>Control de pulgas, garrapatas, parásitos internos y otras amenazas para su salud.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="services-highlight__row">
+            <article class="service-highlight-item service-highlight-item--left">
+              <div class="service-highlight-item__text">
+                <h3>Vacunación</h3>
+                <p>Protección contra enfermedades prevenibles mediante protocolos adaptados a cada etapa de vida.</p>
+              </div>
+              <div class="service-highlight-item__icon service-highlight-item__icon--yellow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+              </div>
+            </article>
+            <div class="services-highlight__row-spacer" aria-hidden="true"></div>
+            <article class="service-highlight-item service-highlight-item--right">
+              <div class="service-highlight-item__icon service-highlight-item__icon--peach">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+              </div>
+              <div class="service-highlight-item__text">
+                <h3>Hotel para Mascotas</h3>
+                <p>Un espacio seguro, cómodo y supervisado donde tu mascota recibe atención, cariño y cuidados mientras estás fuera.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="services-highlight__row">
+            <article class="service-highlight-item service-highlight-item--left">
+              <div class="service-highlight-item__text">
+                <h3>Laboratorio Clínico</h3>
+                <p>Resultados confiables que nos ayudan a diagnosticar y tratar de forma oportuna.</p>
+              </div>
+              <div class="service-highlight-item__icon service-highlight-item__icon--peach">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3h6v7l5 8a2 2 0 0 1-1.7 3H5.7a2 2 0 0 1-1.7-3l5-8V3z"/><path d="M9 3h6"/></svg>
+              </div>
+            </article>
+            <div class="services-highlight__row-spacer" aria-hidden="true"></div>
+            <article class="service-highlight-item service-highlight-item--right">
+              <div class="service-highlight-item__icon service-highlight-item__icon--brown">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="service-highlight-item__text">
+                <h3>Asesoría de Viajes con Mascotas</h3>
+                <p>Te acompañamos durante todo el proceso de viaje de tu mascota, orientándote sobre requisitos sanitarios, documentación, certificados, vacunas y regulaciones del país de destino.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="services-highlight__row">
+            <article class="service-highlight-item service-highlight-item--left">
+              <div class="service-highlight-item__text">
+                <h3>Cirugía</h3>
+                <p>Procedimientos realizados bajo estrictos protocolos de seguridad y monitoreo profesional.</p>
+              </div>
+              <div class="service-highlight-item__icon service-highlight-item__icon--brown">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-3"/><path d="M9 9v0"/><path d="M9 12v0"/><path d="M9 15v0"/><path d="M9 18v0"/></svg>
+              </div>
+            </article>
+            <div class="services-highlight__row-spacer" aria-hidden="true"></div>
+            <article class="service-highlight-item service-highlight-item--right">
+              <div class="service-highlight-item__icon service-highlight-item__icon--sage">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <div class="service-highlight-item__text">
+                <h3>Cremación de Mascotas</h3>
+                <p>Un servicio respetuoso y digno para despedir a quienes fueron parte de la familia, brindando apoyo y acompañamiento en momentos difíciles.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="services-highlight__row">
+            <article class="service-highlight-item service-highlight-item--left">
+              <div class="service-highlight-item__text">
+                <h3>Peluquería y Estética</h3>
+                <p>Baños, cortes y tratamientos de higiene que contribuyen a la salud y bienestar de tu mascota.</p>
+              </div>
+              <div class="service-highlight-item__icon service-highlight-item__icon--sage">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3v18M18 3v18M6 8h12M6 16h12"/></svg>
+              </div>
+            </article>
+            <div class="services-highlight__row-spacer" aria-hidden="true"></div>
+            <article class="service-highlight-item service-highlight-item--right">
+              <div class="service-highlight-item__icon service-highlight-item__icon--yellow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              </div>
+              <div class="service-highlight-item__text">
+                <h3>Emergencias Veterinarias</h3>
+                <p>Atención para situaciones que requieren asistencia médica inmediata, porque sabemos que algunos momentos no pueden esperar.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </div>
