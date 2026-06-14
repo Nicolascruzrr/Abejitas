@@ -2920,3 +2920,817 @@ ul { list-style: none; }
     padding: 28px 22px;
   }
 }
+
+/* ===== Subpages ===== */
+.subpage {
+  background: #FFFDF5;
+}
+
+.subpage .header--solid {
+  background: rgba(255, 253, 245, 0.96);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
+}
+
+.subpage__main {
+  padding-top: 88px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.subpage-hero {
+  position: relative;
+  flex: 1;
+  padding: clamp(40px, 6vw, 64px) 0 clamp(56px, 8vw, 88px);
+  overflow: hidden;
+}
+
+.subpage-hero__paw {
+  position: absolute;
+  top: 20px;
+  right: 4%;
+  width: min(130px, 20vw);
+  pointer-events: none;
+}
+
+.subpage-hero__paw--left {
+  right: auto;
+  left: 2%;
+  top: auto;
+  bottom: 12%;
+}
+
+.subpage__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--green);
+  margin-bottom: clamp(24px, 4vw, 36px);
+  transition: gap var(--transition), opacity var(--transition);
+}
+
+.subpage__back:hover {
+  gap: 12px;
+  opacity: 0.85;
+}
+
+.subpage__back svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.subpage__header {
+  max-width: 720px;
+  margin-bottom: clamp(28px, 4vw, 40px);
+}
+
+.subpage__label {
+  display: block;
+  font-family: var(--font-script);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: #4CAF50;
+  margin-bottom: 12px;
+}
+
+.subpage__title {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.65rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--brown);
+}
+
+.subpage__card {
+  max-width: 760px;
+  background: var(--white);
+  border-radius: 24px;
+  padding: clamp(28px, 4vw, 40px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(76, 175, 80, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.subpage__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green), #A8C686, var(--yellow));
+}
+
+.subpage-hero--confianza .subpage__card::before {
+  background: linear-gradient(90deg, var(--yellow), #E8A87C, var(--green));
+}
+
+.subpage__card p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  line-height: 1.75;
+  color: #444;
+  margin-bottom: clamp(16px, 2.5vw, 22px);
+}
+
+.subpage__card p:last-child {
+  margin-bottom: 0;
+}
+
+.subpage__actions {
+  margin-top: clamp(28px, 4vw, 40px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+@media (max-width: 768px) {
+  .subpage__main {
+    padding-top: 80px;
+  }
+
+  .subpage-hero__paw {
+    width: 90px;
+    opacity: 0.5;
+  }
+
+  .subpage__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .subpage__actions .about__btn {
+    text-align: center;
+  }
+}
+
+/* ===== Confianza Page ===== */
+.confianza-page {
+  background: #FFFDF5;
+}
+
+.confianza-main {
+  padding-top: 88px;
+}
+
+.confianza-dark {
+  position: relative;
+  background-color: #2a2420;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  padding: clamp(36px, 5vw, 56px) 0 0;
+  overflow: hidden;
+  min-height: clamp(600px, 92vh, 960px);
+  display: flex;
+  flex-direction: column;
+}
+
+.confianza-dark__glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+.confianza-dark__glow--green {
+  width: min(420px, 55vw);
+  height: min(420px, 55vw);
+  top: -80px;
+  left: -60px;
+  background: rgba(0, 122, 51, 0.35);
+}
+
+.confianza-dark__glow--warm {
+  width: min(500px, 60vw);
+  height: min(500px, 60vw);
+  top: 10%;
+  right: -120px;
+  background: rgba(244, 197, 66, 0.12);
+}
+
+.confianza-dark__container {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: clamp(56px, 8vh, 88px);
+  transform: translateY(clamp(-20px, -2.5vh, -36px));
+}
+
+.confianza-dark__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #F4C542;
+  margin-bottom: clamp(28px, 4vw, 40px);
+  transition: gap var(--transition), opacity var(--transition);
+}
+
+.confianza-dark__back:hover {
+  gap: 12px;
+  opacity: 0.85;
+}
+
+.confianza-dark__back svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.confianza-dark__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+
+.confianza-dark__label {
+  display: block;
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: #F4C542;
+  margin-bottom: clamp(16px, 2.5vw, 24px);
+}
+
+.confianza-dark__title {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.12;
+  color: var(--white);
+  margin: 0;
+}
+
+.confianza-dark__yellow {
+  color: #F4C542;
+}
+
+.confianza-dark__underline {
+  position: relative;
+  display: inline-block;
+}
+
+.confianza-dark__underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.06em;
+  height: 0.18em;
+  background: var(--green);
+  border-radius: 2px;
+  z-index: -1;
+}
+
+.confianza-dark__body {
+  border-left: 3px solid #F4C542;
+  padding-left: clamp(20px, 3vw, 32px);
+  padding-top: clamp(8px, 1.5vw, 16px);
+}
+
+.confianza-dark__body p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 clamp(16px, 2.5vw, 22px);
+}
+
+.confianza-dark__body p:last-child {
+  margin-bottom: 0;
+}
+
+.confianza-dark__wave {
+  position: relative;
+  z-index: 2;
+  line-height: 0;
+  margin-top: auto;
+}
+
+.confianza-dark__wave svg {
+  display: block;
+  width: 100%;
+  height: clamp(48px, 6vw, 80px);
+}
+
+.confianza-testimonial {
+  background: #FFFDF5;
+  text-align: center;
+  padding: clamp(56px, 8vw, 96px) 0 clamp(128px, 16vw, 180px);
+}
+
+.confianza-testimonial .container {
+  max-width: 960px;
+}
+
+.confianza-testimonial__quote {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.65rem, 3.2vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.4;
+  color: var(--brown);
+  margin: 0 0 clamp(24px, 3.5vw, 36px);
+  quotes: none;
+}
+
+.confianza-testimonial__highlight {
+  position: relative;
+  display: inline;
+  background: linear-gradient(to top, #F4C542 38%, transparent 38%);
+  padding: 0 2px;
+}
+
+.confianza-testimonial__cite {
+  display: block;
+  font-family: 'Nunito', sans-serif;
+  font-style: normal;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: clamp(48px, 7vw, 64px);
+}
+
+.confianza-testimonial__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(14px, 2.5vw, 20px);
+}
+
+.confianza-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: clamp(180px, 22vw, 220px);
+  padding: 14px 48px;
+  border-radius: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  font-weight: 700;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
+  white-space: nowrap;
+}
+
+.confianza-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.confianza-btn--outline {
+  background: var(--white);
+  color: var(--green);
+  border: 2px solid var(--green);
+}
+
+.confianza-btn--outline:hover {
+  background: rgba(0, 122, 51, 0.06);
+}
+
+.confianza-btn--primary {
+  background: #F4C542;
+  color: var(--brown);
+  border: 2px solid #F4C542;
+  box-shadow: 0 6px 20px rgba(244, 197, 66, 0.35);
+}
+
+.confianza-btn--primary:hover {
+  background: #e6b840;
+  border-color: #e6b840;
+}
+
+.confianza-btn__icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .confianza-dark {
+    min-height: clamp(520px, 80vh, 720px);
+  }
+
+  .confianza-dark__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .confianza-dark__body {
+    border-left: none;
+    border-top: 3px solid #F4C542;
+    padding-left: 0;
+    padding-top: clamp(24px, 4vw, 32px);
+  }
+}
+
+@media (max-width: 768px) {
+  .confianza-testimonial__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .confianza-btn {
+    width: 100%;
+  }
+}
+
+/* ===== Filosofía Page ===== */
+.filosofia-page {
+  background: #FFFDF5;
+}
+
+.filosofia-main {
+  padding-top: 88px;
+}
+
+/* Dark hero */
+.filosofia-dark {
+  position: relative;
+  background-color: #2a2420;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  padding: clamp(36px, 5vw, 56px) 0 0;
+  overflow: hidden;
+  min-height: clamp(600px, 92vh, 960px);
+  display: flex;
+  flex-direction: column;
+}
+
+.filosofia-dark__glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+.filosofia-dark__glow--green {
+  width: min(420px, 55vw);
+  height: min(420px, 55vw);
+  top: -80px;
+  left: -60px;
+  background: rgba(0, 122, 51, 0.35);
+}
+
+.filosofia-dark__glow--warm {
+  width: min(500px, 60vw);
+  height: min(500px, 60vw);
+  top: 10%;
+  right: -120px;
+  background: rgba(244, 197, 66, 0.12);
+}
+
+.filosofia-dark__container {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: clamp(56px, 8vh, 88px);
+  transform: translateY(clamp(-20px, -2.5vh, -36px));
+}
+
+.filosofia-dark__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #F4C542;
+  margin-bottom: clamp(28px, 4vw, 40px);
+  transition: gap var(--transition), opacity var(--transition);
+}
+
+.filosofia-dark__back:hover {
+  gap: 12px;
+  opacity: 0.85;
+}
+
+.filosofia-dark__back svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.filosofia-dark__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+
+.filosofia-dark__label {
+  display: block;
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: #F4C542;
+  margin-bottom: clamp(16px, 2.5vw, 24px);
+}
+
+.filosofia-dark__title {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.12;
+  color: var(--white);
+  margin: 0;
+}
+
+.filosofia-dark__yellow {
+  color: #F4C542;
+}
+
+.filosofia-dark__underline {
+  position: relative;
+  display: inline-block;
+}
+
+.filosofia-dark__underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.06em;
+  height: 0.18em;
+  background: var(--green);
+  border-radius: 2px;
+  z-index: -1;
+}
+
+.filosofia-dark__mission {
+  border-left: 3px solid #F4C542;
+  padding-left: clamp(20px, 3vw, 32px);
+  padding-top: clamp(8px, 1.5vw, 16px);
+}
+
+.filosofia-dark__mission p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 clamp(20px, 3vw, 28px);
+}
+
+.filosofia-dark__meta {
+  display: block;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Manifiesto */
+.filosofia-manifiesto {
+  background: #FFFDF5;
+  text-align: center;
+  padding: clamp(56px, 8vw, 96px) 0 clamp(64px, 9vw, 104px);
+}
+
+.filosofia-manifiesto .container {
+  max-width: 960px;
+}
+
+.filosofia-manifiesto__label {
+  display: block;
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: var(--green);
+  margin-bottom: clamp(20px, 3vw, 32px);
+}
+
+.filosofia-manifiesto__quote {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.65rem, 3.2vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.4;
+  color: var(--brown);
+  margin: 0 0 clamp(24px, 3.5vw, 36px);
+  quotes: none;
+}
+
+.filosofia-manifiesto__highlight {
+  position: relative;
+  display: inline;
+  background: linear-gradient(to top, #F4C542 38%, transparent 38%);
+  padding: 0 2px;
+}
+
+.filosofia-manifiesto__cite {
+  display: block;
+  font-family: 'Nunito', sans-serif;
+  font-style: normal;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+/* Wave */
+.filosofia-dark__wave {
+  position: relative;
+  z-index: 2;
+  line-height: 0;
+  margin-top: auto;
+}
+
+.filosofia-dark__wave svg {
+  display: block;
+  width: 100%;
+  height: clamp(48px, 6vw, 80px);
+}
+
+/* Principles */
+.filosofia-principles {
+  position: relative;
+  background: #FFFDF5;
+  padding: 0 0 clamp(128px, 16vw, 180px);
+  overflow: hidden;
+}
+
+.filosofia-principles__leaf {
+  position: absolute;
+  top: clamp(24px, 4vw, 48px);
+  right: clamp(16px, 4vw, 48px);
+  width: clamp(48px, 8vw, 72px);
+  pointer-events: none;
+}
+
+.filosofia-principles__paws {
+  position: absolute;
+  bottom: clamp(24px, 4vw, 48px);
+  left: clamp(12px, 3vw, 40px);
+  width: min(120px, 20vw);
+  pointer-events: none;
+}
+
+.filosofia-principles__header {
+  margin-bottom: clamp(40px, 6vw, 56px);
+}
+
+.filosofia-principles__eyebrow {
+  display: block;
+  font-family: var(--font-script);
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+.filosofia-principles__title {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--brown);
+  margin: 0;
+}
+
+.filosofia-principles__note {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.95rem, 1.8vw, 1.08rem);
+  line-height: 1.65;
+  color: #888;
+  max-width: 300px;
+  margin: 0;
+}
+
+.filosofia-principles__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2.5vw, 24px);
+}
+
+.filosofia-card {
+  position: relative;
+  border-radius: 24px;
+  padding: clamp(28px, 3.5vw, 36px) clamp(24px, 3vw, 32px);
+  overflow: hidden;
+  min-height: clamp(240px, 28vw, 280px);
+  display: flex;
+  flex-direction: column;
+}
+
+.filosofia-card__num {
+  position: absolute;
+  top: clamp(12px, 2vw, 20px);
+  right: clamp(16px, 2.5vw, 24px);
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(3.5rem, 7vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.filosofia-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: clamp(16px, 2.5vw, 24px);
+}
+
+.filosofia-card__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.filosofia-card__title {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.35rem, 2.4vw, 1.65rem);
+  font-weight: 800;
+  margin: 0 0 clamp(10px, 1.5vw, 14px);
+}
+
+.filosofia-card__text {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.filosofia-card--green {
+  background: linear-gradient(145deg, #007A33 0%, #005a26 100%);
+  color: var(--white);
+}
+
+.filosofia-card--green .filosofia-card__num {
+  color: var(--white);
+}
+
+.filosofia-card--yellow {
+  background: linear-gradient(145deg, #F4C542 0%, #e6b030 100%);
+  color: var(--brown);
+}
+
+.filosofia-card--yellow .filosofia-card__num {
+  color: var(--brown);
+}
+
+.filosofia-card--yellow .filosofia-card__icon {
+  background: rgba(51, 36, 33, 0.12);
+}
+
+.filosofia-card--peach {
+  background: linear-gradient(145deg, #F5B895 0%, #E8A87C 100%);
+  color: var(--brown);
+}
+
+.filosofia-card--peach .filosofia-card__num {
+  color: var(--brown);
+}
+
+.filosofia-card--peach .filosofia-card__icon {
+  background: rgba(51, 36, 33, 0.1);
+}
+
+.filosofia-principles__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(14px, 2.5vw, 20px);
+  margin-top: clamp(48px, 7vw, 64px);
+}
+
+@media (max-width: 900px) {
+  .filosofia-dark {
+    min-height: clamp(520px, 80vh, 720px);
+  }
+
+  .filosofia-dark__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .filosofia-dark__mission {
+    border-left: none;
+    border-top: 3px solid #F4C542;
+    padding-left: 0;
+    padding-top: clamp(24px, 4vw, 32px);
+  }
+
+  .filosofia-principles__grid {
+    grid-template-columns: 1fr;
+  }
+}

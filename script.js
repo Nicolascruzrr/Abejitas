@@ -58,38 +58,36 @@ document.addEventListener('DOMContentLoaded', () => {
   updateHeaderScroll();
 
   // Guide modal
-  function openModal() {
-    guideModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+  if (buyGuideBtn && guideModal && closeModal && guideForm) {
+    function openModal() {
+      guideModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModalFn() {
+      guideModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    buyGuideBtn.addEventListener('click', openModal);
+    closeModal.addEventListener('click', closeModalFn);
+    guideModal.querySelector('.modal__overlay').addEventListener('click', closeModalFn);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModalFn();
+    });
+
+    guideForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      closeModalFn();
+      guideForm.reset();
+      if (toast) {
+        toast.textContent = '¡Gracias! Te contactaremos pronto para completar tu compra.';
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3500);
+      }
+    });
   }
-
-  function closeModalFn() {
-    guideModal.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  buyGuideBtn.addEventListener('click', openModal);
-  closeModal.addEventListener('click', closeModalFn);
-  guideModal.querySelector('.modal__overlay').addEventListener('click', closeModalFn);
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModalFn();
-  });
-
-  // Toast helper
-  function showToast(message) {
-    toast.textContent = message;
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 3500);
-  }
-
-  // Guide form
-  guideForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    closeModalFn();
-    guideForm.reset();
-    showToast('¡Gracias! Te contactaremos pronto para completar tu compra.');
-  });
 
   // Reach out WhatsApp options
   const reachOutBtn = document.getElementById('reachOutBtn');
