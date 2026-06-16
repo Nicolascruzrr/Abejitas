@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Scroll animations
   const fadeElements = document.querySelectorAll(
-    '.about__inner, .about__stat-card, .service-card, .guide__card, .feature-item, .gallery__item, .testimonial__card, .reach-out__hero, .reach-out__band-inner'
+    '.about__inner, .about__card, .service-card, .guide__card, .feature-item, .gallery__item, .testimonial__card, .reach-out__hero, .reach-out__band-inner'
   );
 
   fadeElements.forEach(el => el.classList.add('fade-up'));
@@ -129,45 +129,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fadeElements.forEach(el => observer.observe(el));
 
-  // About section stat counters
-  const aboutStatNumbers = document.querySelectorAll('.about__stat-number[data-target]');
-  let aboutCountersStarted = false;
+  // Stat counters
+  function initStatCounters(selector, sectionId) {
+    const statNumbers = document.querySelectorAll(selector);
+    if (!statNumbers.length) return;
 
-  function formatAboutStatValue(value, el) {
-    const suffix = el.dataset.suffix || '';
-    return `${Math.round(value).toLocaleString('en-US')}${suffix}`;
-  }
+    let started = false;
 
-  function animateAboutCounters() {
-    if (aboutCountersStarted || !aboutStatNumbers.length) return;
-
-    const aboutSection = document.getElementById('nosotros');
-    if (!aboutSection) return;
-
-    const rect = aboutSection.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.85 && rect.bottom > 0) {
-      aboutCountersStarted = true;
-
-      aboutStatNumbers.forEach((el) => {
-        const target = parseInt(el.dataset.target, 10);
-        const duration = 2000;
-        const start = performance.now();
-
-        function update(now) {
-          const elapsed = now - start;
-          const progress = Math.min(elapsed / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          const current = eased * target;
-          el.textContent = formatAboutStatValue(current, el);
-
-          if (progress < 1) requestAnimationFrame(update);
-        }
-
-        requestAnimationFrame(update);
-      });
+    function formatStatValue(value, el) {
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      return `${prefix}${Math.round(value).toLocaleString('en-US')}${suffix}`;
     }
+
+    function animateCounters() {
+      if (started) return;
+
+      const section = document.getElementById(sectionId);
+      if (!section) return;
+
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.85 && rect.bottom > 0) {
+        started = true;
+
+        statNumbers.forEach((el) => {
+          const target = parseInt(el.dataset.target, 10);
+          const duration = 3200;
+          const start = performance.now();
+
+          function update(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = formatStatValue(eased * target, el);
+
+            if (progress < 1) requestAnimationFrame(update);
+          }
+
+          requestAnimationFrame(update);
+        });
+      }
+    }
+
+    window.addEventListener('scroll', animateCounters);
+    animateCounters();
   }
 
-  window.addEventListener('scroll', animateAboutCounters);
-  animateAboutCounters();
+  initStatCounters('.why-showcase__stat-number[data-target]', 'por-que-elegirnos');
 });
