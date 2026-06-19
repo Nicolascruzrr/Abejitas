@@ -4156,7 +4156,7 @@ ul { list-style: none; }
   --vh-line: #D6D6D6;
   --vh-text: #3a3a3a;
   --vh-muted: #6f6f6f;
-  --vh-photo: clamp(76px, 7.5vw, 96px);
+  --vh-icon: clamp(52px, 5vw, 64px);
   --vh-path: clamp(128px, 16vw, 200px);
   background: var(--vh-cream);
   padding: clamp(80px, 11vw, 128px) 0 clamp(96px, 12vw, 140px);
@@ -4287,25 +4287,43 @@ ul { list-style: none; }
   flex-direction: row;
 }
 
-.vet-hub__photo {
-  width: var(--vh-photo);
-  height: var(--vh-photo);
+.vet-hub__icon {
+  width: var(--vh-icon);
+  height: var(--vh-icon);
   border-radius: 50%;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   border: 4px solid #fff;
-  box-shadow: 0 8px 28px rgba(62, 139, 82, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
-  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 2;
 }
 
-.vet-hub__photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
+.vet-hub__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.vet-hub__icon--yellow {
+  background: #F4C542;
+  color: #3E2723;
+}
+
+.vet-hub__icon--sage {
+  background: #A8C686;
+  color: #fff;
+}
+
+.vet-hub__icon--peach {
+  background: #E8A87C;
+  color: #fff;
+}
+
+.vet-hub__icon--brown {
+  background: #3E2723;
+  color: #fff;
 }
 
 .vet-hub__path {
@@ -4440,8 +4458,8 @@ ul { list-style: none; }
     font-size: 1.05rem;
   }
 
-  .vet-hub__photo {
-    --vh-photo: 72px;
+  .vet-hub__icon {
+    --vh-icon: 52px;
   }
 }
 
