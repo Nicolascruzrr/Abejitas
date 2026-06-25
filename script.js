@@ -9,6 +9,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const guideForm = document.getElementById('guideForm');
   const toast = document.getElementById('toast');
 
+  // Loading screen
+  const loader = document.getElementById('loader');
+  if (loader) {
+    const hideLoader = () => loader.classList.add('is-hidden');
+    if (document.readyState === 'complete') {
+      setTimeout(hideLoader, 2100);
+    } else {
+      window.addEventListener('load', () => setTimeout(hideLoader, 2100));
+    }
+    // Fallback en caso de que algún recurso tarde demasiado
+    setTimeout(hideLoader, 7000);
+  }
+
   // Mobile menu
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
