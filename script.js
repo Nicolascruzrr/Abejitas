@@ -6,29 +6,74 @@ document.addEventListener('DOMContentLoaded', () => {
   const navBackdrop = document.getElementById('navBackdrop');
   const navClose = document.getElementById('navClose');
 
-  // Loading screen
-  const loader = document.getElementById('loader');
-  const heroVideos = document.querySelectorAll('.hero__video');
+  // Hero video — load only the active device video, then play
+  const heroVideoDesktop = document.querySelector('.hero__video--desktop');
+  const heroVideoMobile = document.querySelector('.hero__video--mobile');
 
-  function playActiveHeroVideo() {
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  function isMobileHero() {
+    return window.matchMedia('(max-width: 768px)').matches;
+  }
 
-    heroVideos.forEach((video) => {
-      const isMobileVideo = video.classList.contains('hero__video--mobile');
-      const shouldPlay = isMobile ? isMobileVideo : !isMobileVideo;
+  function getActiveHeroVideo() {
+    return isMobileHero() ? heroVideoMobile : heroVideoDesktop;
+  }
 
-      if (shouldPlay) {
-        video.play().catch(() => {});
-      } else {
-        video.pause();
+  function getInactiveHeroVideo() {
+    return isMobileHero() ? heroVideoDesktop : heroVideoMobile;
+  }
+
+  function unloadHeroVideo(video) {
+    if (!video) return;
+    video.pause();
+    const source = video.querySelector('source');
+    if (source) source.removeAttribute('src');
+    video.removeAttribute('src');
+    video.load();
+  }
+
+  function loadHeroVideo(video) {
+    if (!video) return Promise.resolve();
+
+    const source = video.querySelector('source');
+    const src = source?.dataset.src || video.dataset.src;
+    if (!src) return Promise.resolve();
+
+    if (source?.getAttribute('src') === src && video.readyState >= 3) {
+      return Promise.resolve();
+    }
+
+    if (source) {
+      source.setAttribute('src', src);
+    } else {
+      video.setAttribute('src', src);
+    }
+
+    return new Promise((resolve) => {
+      const done = () => {
+        video.removeEventListener('canplaythrough', done);
+        video.removeEventListener('error', done);
+        resolve();
+      };
+
+      if (video.readyState >= 4) {
+        resolve();
+        return;
       }
+
+      video.addEventListener('canplaythrough', done, { once: true });
+      video.addEventListener('error', done, { once: true });
+      video.load();
     });
   }
 
-  playActiveHeroVideo();
-  window.addEventListener('orientationchange', () => {
-    setTimeout(playActiveHeroVideo, 150);
-  });
+  async function initHeroVideo() {
+    const active = getActiveHeroVideo();
+    const inactive = getInactiveHeroVideo();
+    unloadHeroVideo(inactive);
+    await loadHeroVideo(active);
+    if (active) active.play().catch(() => {});
+    return active;
+  }
 
   function lockMobileHeroHeight() {
     if (!window.matchMedia('(max-width: 768px)').matches) {
@@ -39,19 +84,37 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   lockMobileHeroHeight();
-  window.addEventListener('orientationchange', () => {
-    setTimeout(lockMobileHeroHeight, 150);
-  });
+
+  let lastMobileHero = isMobileHero();
+  const onHeroLayoutChange = () => {
+    setTimeout(() => {
+      lockMobileHeroHeight();
+      const nowMobile = isMobileHero();
+      if (nowMobile !== lastMobileHero) {
+        lastMobileHero = nowMobile;
+        initHeroVideo();
+      }
+    }, 150);
+  };
+
+  window.addEventListener('orientationchange', onHeroLayoutChange);
+  window.addEventListener('resize', onHeroLayoutChange);
+
+  const loader = document.getElementById('loader');
 
   if (loader) {
-    const hideLoader = () => loader.classList.add('is-hidden');
+    let loaderHidden = false;
+    const hideLoader = () => {
+      if (loaderHidden) return;
+      loaderHidden = true;
+      loader.classList.add('is-hidden');
+    };
 
     function shouldShowLoader() {
       const navEntry = performance.getEntriesByType('navigation')[0];
       const navType = navEntry?.type;
 
       if (navType === 'reload') return true;
-
       if (navType === 'back_forward') return false;
 
       const referrer = document.referrer;
@@ -60,15 +123,16 @@ document.addEventListener('DOMContentLoaded', () => {
       return true;
     }
 
+    setTimeout(hideLoader, 7000);
+
     if (!shouldShowLoader()) {
       hideLoader();
-    } else if (document.readyState === 'complete') {
-      setTimeout(hideLoader, 2100);
+      initHeroVideo();
     } else {
-      window.addEventListener('load', () => setTimeout(hideLoader, 2100));
+      initHeroVideo().then(hideLoader);
     }
-
-    setTimeout(hideLoader, 7000);
+  } else if (heroVideoDesktop || heroVideoMobile) {
+    initHeroVideo();
   }
 
   // Mobile menu
@@ -160,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Scroll animations
   const fadeElements = document.querySelectorAll(
-    '.about__inner, .about__card, .service-card, .guide__card, .feature-item, .gallery__item, .testimonial__card, .reach-out__hero, .reach-out__band-inner'
+    '.about__inner, .about__card, .guide__card, .testimonial__card, .reach-out__hero, .reach-out__band-inner'
   );
 
   fadeElements.forEach(el => el.classList.add('fade-up'));
