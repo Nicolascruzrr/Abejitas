@@ -4206,14 +4206,14 @@ ul { list-style: none; }
     touch-action: manipulation;
   }
 
-  /* iPhone: lvh cubre el hueco inferior que deja Safari (solo iOS, Android sigue con --hero-h) */
+  /* iPhone: lvh + 20px extra (doble del ajuste inicial) para tapar el hueco de Safari */
   html.iphone .hero {
     min-height: 100vh;
     min-height: -webkit-fill-available;
-    min-height: 100lvh;
+    min-height: calc(100lvh + 20px);
     height: 100vh;
     height: -webkit-fill-available;
-    height: 100lvh;
+    height: calc(100lvh + 20px);
   }
 
   .hero__overlay {
