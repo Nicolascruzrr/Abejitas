@@ -75,12 +75,21 @@ document.addEventListener('DOMContentLoaded', () => {
     return active;
   }
 
+  function isIPhone() {
+    return /iPhone/i.test(navigator.userAgent);
+  }
+
   function lockMobileHeroHeight() {
     if (!isMobileHero()) {
       document.documentElement.style.removeProperty('--hero-h');
       return;
     }
-    document.documentElement.style.setProperty('--hero-h', `${window.innerHeight}px`);
+    const extra = isIPhone() ? 10 : 0;
+    document.documentElement.style.setProperty('--hero-h', `${window.innerHeight + extra}px`);
+  }
+
+  if (isIPhone()) {
+    document.documentElement.classList.add('iphone');
   }
 
   lockMobileHeroHeight();
