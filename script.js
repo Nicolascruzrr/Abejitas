@@ -84,8 +84,12 @@ document.addEventListener('DOMContentLoaded', () => {
       document.documentElement.style.removeProperty('--hero-h');
       return;
     }
-    const extra = isIPhone() ? 10 : 0;
-    document.documentElement.style.setProperty('--hero-h', `${window.innerHeight + extra}px`);
+    if (isIPhone()) {
+      // iPhone usa 100lvh en CSS; no fijar --hero-h para evitar el hueco inferior
+      document.documentElement.style.removeProperty('--hero-h');
+      return;
+    }
+    document.documentElement.style.setProperty('--hero-h', `${window.innerHeight}px`);
   }
 
   if (isIPhone()) {
