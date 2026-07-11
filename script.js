@@ -5,19 +5,43 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav__link, .nav__cta, .nav__cta--mobile, .nav__cta--desktop');
   const navBackdrop = document.getElementById('navBackdrop');
   const navClose = document.getElementById('navClose');
-  const buyGuideBtn = document.getElementById('buyGuideBtn');
-  const guideModal = document.getElementById('guideModal');
-  const closeModal = document.getElementById('closeModal');
-  const guideForm = document.getElementById('guideForm');
-  const toast = document.getElementById('toast');
 
   // Loading screen
   const loader = document.getElementById('loader');
-  const heroVideo = document.querySelector('.hero__video');
+  const heroVideos = document.querySelectorAll('.hero__video');
 
-  if (heroVideo) {
-    heroVideo.play().catch(() => {});
+  function playActiveHeroVideo() {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+    heroVideos.forEach((video) => {
+      const isMobileVideo = video.classList.contains('hero__video--mobile');
+      const shouldPlay = isMobile ? isMobileVideo : !isMobileVideo;
+
+      if (shouldPlay) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
   }
+
+  playActiveHeroVideo();
+  window.addEventListener('orientationchange', () => {
+    setTimeout(playActiveHeroVideo, 150);
+  });
+
+  function lockMobileHeroHeight() {
+    if (!window.matchMedia('(max-width: 768px)').matches) {
+      document.documentElement.style.removeProperty('--hero-h');
+      return;
+    }
+    document.documentElement.style.setProperty('--hero-h', `${window.innerHeight}px`);
+  }
+
+  lockMobileHeroHeight();
+  window.addEventListener('orientationchange', () => {
+    setTimeout(lockMobileHeroHeight, 150);
+  });
 
   if (loader) {
     const hideLoader = () => loader.classList.add('is-hidden');
@@ -133,38 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   updateHeaderScroll();
   updateActiveNav();
-
-  // Guide modal
-  if (buyGuideBtn && guideModal && closeModal && guideForm) {
-    function openModal() {
-      guideModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModalFn() {
-      guideModal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    buyGuideBtn.addEventListener('click', openModal);
-    closeModal.addEventListener('click', closeModalFn);
-    guideModal.querySelector('.modal__overlay').addEventListener('click', closeModalFn);
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModalFn();
-    });
-
-    guideForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      closeModalFn();
-      guideForm.reset();
-      if (toast) {
-        toast.textContent = '¡Gracias! Te contactaremos pronto para completar tu compra.';
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 3500);
-      }
-    });
-  }
 
   // Scroll animations
   const fadeElements = document.querySelectorAll(

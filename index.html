@@ -141,8 +141,11 @@
   <!-- Hero -->
   <section class="hero" id="inicio">
     <div class="hero__media" aria-hidden="true">
-      <video class="hero__video" autoplay muted loop playsinline>
+      <video class="hero__video hero__video--desktop" autoplay muted loop playsinline>
         <source src="img/video%20background%20lissa.mp4" type="video/mp4">
+      </video>
+      <video class="hero__video hero__video--mobile" autoplay muted loop playsinline>
+        <source src="img/video%20lissa%20cel.mp4" type="video/mp4">
       </video>
       <div class="hero__overlay"></div>
     </div>
@@ -517,19 +520,20 @@
           <img src="img/ebook.png" alt="Portada: La Convivencia de la Mascota con la Llegada de un Bebé">
         </div>
         <div class="guide__content">
-          <p class="script-title script-title--orange">Guía Digital</p>
+          <p class="script-title script-title--green">Guía Digital</p>
           <h2 class="section-title">La Convivencia de la Mascota con la Llegada de un Bebé</h2>
-          <p class="guide__desc">Descarga nuestra guía digital con consejos de alimentación, vacunación, primeros auxilios, señales de alerta y cuidados diarios. Escrita por nuestro equipo veterinario en Santo Domingo.</p>
+          <p class="guide__desc">Descubre cómo lograr una convivencia segura, amorosa y armoniosa entre tu mascota y la llegada de un nuevo integrante de la familia.</p>
+          <p class="guide__features-intro">En esta guía aprenderás:</p>
           <ul class="guide__features">
-            <li>✓ Más de 50 páginas de contenido práctico</li>
-            <li>✓ Calendario de vacunas descargable</li>
-            <li>✓ Recetas caseras saludables</li>
-            <li>✓ Acceso inmediato tras la compra</li>
+            <li>✓ Cómo preparar a tu mascota antes del nacimiento</li>
+            <li>✓ Qué hacer en el primer encuentro con el bebé</li>
+            <li>✓ Cómo manejar los celos y ansiedad</li>
+            <li>✓ Consejos y beneficios de un niño criándose con una mascota</li>
           </ul>
           <div class="guide__pricing">
-            <span class="guide__price">RD$ 350</span>
+            <span class="guide__price">$6 USD</span>
           </div>
-          <button class="btn btn--orange btn--lg" id="buyGuideBtn">Comprar Guía Ahora</button>
+          <a href="https://pay.hotmart.com/I105711009D" class="btn btn--green btn--lg" target="_blank" rel="noopener noreferrer">Comprar Guía Ahora</a>
         </div>
       </div>
     </div>
@@ -769,27 +773,6 @@
       <p class="site-bar__copy">&copy; 2026 Abejitas Vet. Todos los derechos reservados.</p>
     </div>
   </footer>
-
-  <!-- Buy Guide Modal -->
-  <div class="modal" id="guideModal">
-    <div class="modal__overlay"></div>
-    <div class="modal__content">
-      <button class="modal__close" id="closeModal" aria-label="Cerrar">&times;</button>
-      <div class="modal__icon">📖</div>
-      <h3>Comprar Guía Digital</h3>
-      <p>Estás a un paso de obtener <em>La Convivencia de la Mascota con la Llegada de un Bebé</em> de Abejitas Vet.</p>
-      <form class="modal__form" id="guideForm">
-        <input type="text" name="nombre" placeholder="Tu nombre completo" required>
-        <input type="email" name="email" placeholder="Correo electrónico" required>
-        <input type="tel" name="telefono" placeholder="WhatsApp / Teléfono" required>
-        <button type="submit" class="btn btn--orange btn--lg">Pagar RD$ 850</button>
-      </form>
-      <p class="modal__note">Próximamente integración con pasarela de pago. Por ahora te contactaremos para completar tu compra.</p>
-    </div>
-  </div>
-
-  <!-- Toast -->
-  <div class="toast" id="toast"></div>
 
   <script src="script.js"></script>
 </body>
