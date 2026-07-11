@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function lockMobileHeroHeight() {
-    if (!window.matchMedia('(max-width: 768px)').matches) {
+    if (!isMobileHero()) {
       document.documentElement.style.removeProperty('--hero-h');
       return;
     }
@@ -84,11 +84,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   lockMobileHeroHeight();
+  window.addEventListener('orientationchange', () => {
+    setTimeout(lockMobileHeroHeight, 150);
+  });
 
   let lastMobileHero = isMobileHero();
   const onHeroLayoutChange = () => {
     setTimeout(() => {
-      lockMobileHeroHeight();
       const nowMobile = isMobileHero();
       if (nowMobile !== lastMobileHero) {
         lastMobileHero = nowMobile;
