@@ -4210,10 +4210,10 @@ ul { list-style: none; }
   html.iphone .hero {
     min-height: 100vh;
     min-height: -webkit-fill-available;
-    min-height: calc(100lvh + 40px);
+    min-height: calc(100lvh + 130px);
     height: 100vh;
     height: -webkit-fill-available;
-    height: calc(100lvh + 40px);
+    height: calc(100lvh + 130px);
   }
 
   .hero__overlay {
