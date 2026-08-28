@@ -97,13 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   lockMobileHeroHeight();
-  window.addEventListener('orientationchange', () => {
-    setTimeout(lockMobileHeroHeight, 150);
-  });
 
   let lastMobileHero = isMobileHero();
   const onHeroLayoutChange = () => {
     setTimeout(() => {
+      lockMobileHeroHeight();
       const nowMobile = isMobileHero();
       if (nowMobile !== lastMobileHero) {
         lastMobileHero = nowMobile;
