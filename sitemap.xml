@@ -6,12 +6,17 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://abejitasvet.do/filosofia.html</loc>
+    <loc>https://abejitasvet.do/filosofia</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://abejitasvet.do/confianza.html</loc>
+    <loc>https://abejitasvet.do/confianza</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://abejitasvet.do/asesoria-viajes</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
